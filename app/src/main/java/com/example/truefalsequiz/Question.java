@@ -1,12 +1,12 @@
 package com.example.truefalsequiz;
 
-public class Questions {
+public class Question {
     private String question;
     private boolean answer;
 
     @Override
     public String toString() {
-        return "Questions{" +
+        return "Question{" +
                 "question='" + question + '\'' +
                 ", answer=" + answer +
                 '}';
@@ -21,6 +21,7 @@ public class Questions {
     }
 
     public boolean isAnswer() {
+        
         return answer;
     }
 
