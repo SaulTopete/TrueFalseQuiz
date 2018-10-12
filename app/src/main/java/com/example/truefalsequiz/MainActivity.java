@@ -18,7 +18,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-   private List<Question> questions;
+    private Button trueButton;
+    private Button falseButton;
+    private TextView questionDisplay;
 
     public static final String TAG = "MainActivity";
 
@@ -28,6 +30,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initializeQuiz();
+        setListeners();
+        wireWidgets();
+    }
+
+    private void setListeners() {
+        trueButton.setOnClickListener(this);
+
+    }
+
+    private void wireWidgets() {
+        trueButton = findViewById(R.id.button_main_true);
+        falseButton = findViewById(R.id.button_main_false);
+        questionDisplay = findViewById(R.id.textview_main_questions);
     }
 
     private void initializeQuiz() {
@@ -42,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         //convert your array to a list using the Arrays utility class
         List<Question> questionList = Arrays.asList(questions);
         //verify that it read everything properly
-        Log.d("WORKING", "onCreate: " + questionList.toString());
+        Log.d(TAG, "onCreate: " + questionList.toString());
     }
 
     public String readTextFile(InputStream inputStream) {
