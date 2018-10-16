@@ -21,7 +21,6 @@ public class Question {
     }
 
     public boolean isAnswer() {
-        
         return answer;
     }
 

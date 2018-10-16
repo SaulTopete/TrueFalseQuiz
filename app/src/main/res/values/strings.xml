@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TrueFalseQuiz</string>
+    <string name="main_questions">3</string>
+    <string name="main_score">6</string>
 </resources>
