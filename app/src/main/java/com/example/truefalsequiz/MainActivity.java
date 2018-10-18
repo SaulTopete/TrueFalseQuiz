@@ -33,7 +33,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initializeQuiz();
+        setListeners();
         wireWidgets();
+        displayNextQuestion();
+    }
+
+    private void displayNextQuestion() {
+
+    }
+
+    private void setListeners() {
+        trueButton.setOnClickListener((View.OnClickListener) this);
+        falseButton.setOnClickListener((View.OnClickListener) this);
     }
 
 
@@ -50,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         List<Question> questionList = Arrays.asList(questions);
         //verify that it read everything properly
         Log.d(TAG, "onCreate: " + questionList.toString());
+        Quiz quiz = new Quiz(questionList);
     }
 
 

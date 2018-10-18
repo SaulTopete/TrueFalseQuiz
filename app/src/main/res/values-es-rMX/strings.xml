@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gana Dinero</string>
+    <string name="quiz_false">Falso</string>
+    <string name="quiz_true">Verdad</string>
+    <string name="main_score">Resultado</string>
+</resources>

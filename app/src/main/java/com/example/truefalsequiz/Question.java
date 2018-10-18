@@ -1,5 +1,7 @@
 package com.example.truefalsequiz;
 
+import java.util.List;
+
 public class Question {
     private String question;
     private boolean answer;
@@ -10,6 +12,15 @@ public class Question {
                 "question='" + question + '\'' +
                 ", answer=" + answer +
                 '}';
+    }
+
+    public Question(String question, boolean answer) {
+        this.question = question;
+        this.answer = answer;
+    }
+
+    public void checkAnswer(){
+
     }
 
     public String getQuestion() {
@@ -28,3 +39,5 @@ public class Question {
         this.answer = answer;
     }
 }
+
+
