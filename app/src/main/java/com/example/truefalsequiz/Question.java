@@ -2,7 +2,7 @@ package com.example.truefalsequiz;
 
 import java.util.List;
 
-public class Question {
+public class Question extends MainActivity{
     private String question;
     private boolean answer;
 
@@ -14,9 +14,8 @@ public class Question {
                 '}';
     }
 
-    public Question(String question, boolean answer) {
-        this.question = question;
-        this.answer = answer;
+    public Question() {
+        super();
     }
 
     public void checkAnswer(){

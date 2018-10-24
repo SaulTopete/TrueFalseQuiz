@@ -1,5 +1,7 @@
 package com.example.truefalsequiz;
 
+import android.widget.Button;
+
 import java.util.List;
 
 public class Quiz extends MainActivity{
@@ -7,14 +9,11 @@ public class Quiz extends MainActivity{
     private int score;
     private int currentQ;
 
-    public Quiz(List<Question> questions, int score, int currentQ){
-        this.questions = questions;
-        this.score = score;
-        this.currentQ = currentQ;
+    public Quiz(){
     }
 
     public List<Question> getQuestions() {
-        return questions;
+
     }
 
     public void setQuestions(List<Question> questions) {
@@ -30,7 +29,6 @@ public class Quiz extends MainActivity{
     }
 
     public int getCurrentQ() {
-
         return currentQ;
     }
 

@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
+import org.w3c.dom.Text;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -24,8 +26,14 @@ public class MainActivity extends AppCompatActivity {
     private Button falseButton;
     private TextView questionDisplay;
     private TextView scoreDisplay;
+    private Quiz quiz;
 
     public static final String TAG = "MainActivity";
+
+    public MainActivity(){
+        this.trueButton = trueButton;
+        this.falseButton = falseButton;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +46,35 @@ public class MainActivity extends AppCompatActivity {
         displayNextQuestion();
     }
 
-    private void displayNextQuestion() {
 
+    private void displayNextQuestion() {
+        if()
     }
 
     private void setListeners() {
-        trueButton.setOnClickListener((View.OnClickListener) this);
-        falseButton.setOnClickListener((View.OnClickListener) this);
+        trueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.button_main_true:
+                        answerQuestion(true);
+                }
+
+            }
+        });
+        falseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
+    private void answerQuestion(Object p0) {
     }
 
 
-    private void initializeQuiz() {
+    public void initializeQuiz() {
         InputStream XmlFileInputStream = getResources().openRawResource(R.raw.questions); // getting XML
 
         String jsonString = readTextFile(XmlFileInputStream);
@@ -61,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         List<Question> questionList = Arrays.asList(questions);
         //verify that it read everything properly
         Log.d(TAG, "onCreate: " + questionList.toString());
-        Quiz quiz = new Quiz(questionList);
+        quiz = new Quiz();
     }
 
 
@@ -69,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         trueButton = findViewById(R.id.button_main_true);
         falseButton = findViewById(R.id.button_main_false);
         questionDisplay = findViewById(R.id.textview_main_questions);
-        scoreDisplay = findViewById(R.id.textView);
+        scoreDisplay = findViewById(R.id.textview_main_score);
     }
 
 
