@@ -6,36 +6,42 @@ public class Question extends MainActivity{
     private String question;
     private boolean answer;
 
-    @Override
-    public String toString() {
-        return "Question{" +
-                "question='" + question + '\'' +
-                ", answer=" + answer +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Question{" +
+//                "question='" + question + '\'' +
+//                ", answer=" + answer +
+//                '}';
+//    }
 
-    public Question() {
-        super();
-    }
-
-    public void checkAnswer(){
-
+    public Question(String question, boolean answer) {
+        this.question = question;
+        this.answer = answer;
     }
 
     public String getQuestion() {
-        return question;
+        return this.question;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setQuestion(String q) {
+        this.question = q;
     }
 
     public boolean isAnswer() {
-        return answer;
+        return this.answer;
     }
 
-    public void setAnswer(boolean answer) {
-        this.answer = answer;
+    public void setAnswer(boolean a) {
+        this.answer = a;
+    }
+
+    public boolean checkAnswer(boolean userAnswer){
+        if(userAnswer == isAnswer()){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
 

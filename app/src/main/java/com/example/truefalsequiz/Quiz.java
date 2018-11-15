@@ -9,15 +9,22 @@ public class Quiz extends MainActivity{
     private int score;
     private int currentQ;
 
-    public Quiz(){
+    public Quiz(List<Question> questionList){
+        score = 0;
+        currentQ = 0;
+        questions = questionList;
     }
 
-    public List<Question> getQuestions() {
-
+    public Question getQuestions(){
+        return questions.get(currentQ);
     }
 
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
+    public int getQuizSize(){
+        return questions.size();
+    }
+
+    public void setQuestions(List<Question> questionList){
+        questions = questionList;
     }
 
     public int getScore() {
@@ -34,5 +41,18 @@ public class Quiz extends MainActivity{
 
     public void setCurrentQ(int currentQ) {
         this.currentQ = currentQ;
+    }
+
+    public void nextQuestion(){
+        currentQ++;
+    }
+
+    public boolean isThereAnotherQuestion(){
+        if(getCurrentQ() == 10){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

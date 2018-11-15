@@ -30,11 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
 
-    public MainActivity(){
-        this.trueButton = trueButton;
-        this.falseButton = falseButton;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +38,14 @@ public class MainActivity extends AppCompatActivity {
         initializeQuiz();
         setListeners();
         wireWidgets();
-        displayNextQuestion();
+        displayFirstQuestion(quiz);
+        Log.d("Quiz", "onCreate: " + "Quiz");
+        scoreDisplay.setText(String.valueOf(+quiz.getScore()));
     }
 
+    private void displayFirstQuestion() {
+        quiz.setCurrentQ(quiz.getCurrentQ());
 
-    private void displayNextQuestion() {
-        if()
     }
 
     private void setListeners() {
@@ -65,12 +62,16 @@ public class MainActivity extends AppCompatActivity {
         falseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                switch (v.getId()){
+                    case R.id.button_main_false:
+                        answerQuestion(false);
+                }
             }
         });
     }
 
     private void answerQuestion(Object p0) {
+        if()
     }
 
 
@@ -111,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
             outputStream.close();
             inputStream.close();
         } catch (IOException e) {
-
         }
         return outputStream.toString();
     }
